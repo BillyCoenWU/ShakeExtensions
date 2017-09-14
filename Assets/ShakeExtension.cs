@@ -1,7 +1,8 @@
 ﻿namespace RGSMS
 {
-    namespace Shake
+    namespace SHAKE
     {
+
         using UnityEngine;
         using System.Collections;
         
@@ -16,7 +17,7 @@
             Z
         }
         
-        public static class ShakeManager
+        public static class ShakeExtensiton
         {
             //TO DO:
             // CRIAR SHAKES QUE DUREM ENQUANTO UMA BOOLEANA ESTIVER TRUE
@@ -1081,7 +1082,7 @@
             {
                 return ShakeScale(transform, AXIS.Y_Z, intensity, duration, useFixedDeltaTime);
             }
-
+            
             #endregion
             
             #region PRIVATES
