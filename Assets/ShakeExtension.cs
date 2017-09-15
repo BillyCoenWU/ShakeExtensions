@@ -26,57 +26,57 @@
 
             #region WORLD
 
-            public static IEnumerator ShakePosition(this Transform transform, float intensity, float duration, bool useFixedDeltaTime)
+            public static IEnumerator ShakePosition(this Transform transform, float intensity, float duration, bool useFixedDeltaTime = false)
             {
                 return ShakePosition(transform, intensity, duration, false, useFixedDeltaTime);
             }
             
-            public static IEnumerator ShakePosition(this Transform transform, Vector3 intensity, float duration, bool useFixedDeltaTime)
+            public static IEnumerator ShakePosition(this Transform transform, Vector3 intensity, float duration, bool useFixedDeltaTime = false)
             {
                 return ShakePosition(transform, intensity, duration, false, useFixedDeltaTime);
             }
             
-            public static IEnumerator ShakePositionX(this Transform transform, float intensity, float duration, bool useFixedDeltaTime)
+            public static IEnumerator ShakePositionX(this Transform transform, float intensity, float duration, bool useFixedDeltaTime = false)
             {
                 return ShakePosition(transform, AXIS.X, intensity, duration, false, useFixedDeltaTime);
             }
 
-            public static IEnumerator ShakePositionY(this Transform transform, float intensity, float duration, bool useFixedDeltaTime)
+            public static IEnumerator ShakePositionY(this Transform transform, float intensity, float duration, bool useFixedDeltaTime = false)
             {
                 return ShakePosition(transform, AXIS.Y, intensity, duration, false, useFixedDeltaTime);
             }
 
-            public static IEnumerator ShakePositionZ(this Transform transform, float intensity, float duration, bool useFixedDeltaTime)
+            public static IEnumerator ShakePositionZ(this Transform transform, float intensity, float duration, bool useFixedDeltaTime = false)
             {
                 return ShakePosition(transform, AXIS.Z, intensity, duration, false, useFixedDeltaTime);
             }
 
-            public static IEnumerator ShakePositionXY(this Transform transform, float intensity, float duration, bool useFixedDeltaTime)
+            public static IEnumerator ShakePositionXY(this Transform transform, float intensity, float duration, bool useFixedDeltaTime = false)
             {
                 return ShakePosition(transform, AXIS.X_Y, intensity, duration, false, useFixedDeltaTime);
             }
 
-            public static IEnumerator ShakePositionXY(this Transform transform, Vector3 intensity, float duration, bool useFixedDeltaTime)
+            public static IEnumerator ShakePositionXY(this Transform transform, Vector3 intensity, float duration, bool useFixedDeltaTime = false)
             {
                 return ShakePosition(transform, AXIS.X_Y, intensity, duration, false, useFixedDeltaTime);
             }
 
-            public static IEnumerator ShakePositionXZ(this Transform transform, float intensity, float duration, bool useFixedDeltaTime)
+            public static IEnumerator ShakePositionXZ(this Transform transform, float intensity, float duration, bool useFixedDeltaTime = false)
             {
                 return ShakePosition(transform, AXIS.X_Z, intensity, duration, false, useFixedDeltaTime);
             }
 
-            public static IEnumerator ShakePositionXZ(this Transform transform, Vector3 intensity, float duration, bool useFixedDeltaTime)
+            public static IEnumerator ShakePositionXZ(this Transform transform, Vector3 intensity, float duration, bool useFixedDeltaTime = false)
             {
                 return ShakePosition(transform, AXIS.X_Z, intensity, duration, false, useFixedDeltaTime);
             }
 
-            public static IEnumerator ShakePositionYZ(this Transform transform, float intensity, float duration, bool useFixedDeltaTime)
+            public static IEnumerator ShakePositionYZ(this Transform transform, float intensity, float duration, bool useFixedDeltaTime = false)
             {
                 return ShakePosition(transform, AXIS.Y_Z, intensity, duration, false, useFixedDeltaTime);
             }
 
-            public static IEnumerator ShakePositionYZ(this Transform transform, Vector3 intensity, float duration, bool useFixedDeltaTime)
+            public static IEnumerator ShakePositionYZ(this Transform transform, Vector3 intensity, float duration, bool useFixedDeltaTime = false)
             {
                 return ShakePosition(transform, AXIS.Y_Z, intensity, duration, false, useFixedDeltaTime);
             }
@@ -85,57 +85,57 @@
 
             #region LOCAL
 
-            public static IEnumerator ShakeLocalPosition(this Transform transform, float intensity, float duration, bool useFixedDeltaTime)
+            public static IEnumerator ShakeLocalPosition(this Transform transform, float intensity, float duration, bool useFixedDeltaTime = false)
             {
                 return ShakePosition(transform, intensity, duration, true, useFixedDeltaTime);
             }
 
-            public static IEnumerator ShakeLocalPosition(this Transform transform, Vector3 intensity, float duration, bool useFixedDeltaTime)
+            public static IEnumerator ShakeLocalPosition(this Transform transform, Vector3 intensity, float duration, bool useFixedDeltaTime = false)
             {
                 return ShakePosition(transform, intensity, duration, true, useFixedDeltaTime);
             }
 
-            public static IEnumerator ShakeLocalPositionX(this Transform transform, float intensity, float duration, bool useFixedDeltaTime)
+            public static IEnumerator ShakeLocalPositionX(this Transform transform, float intensity, float duration, bool useFixedDeltaTime = false)
             {
                 return ShakePosition(transform, AXIS.X, intensity, duration, true, useFixedDeltaTime);
             }
 
-            public static IEnumerator ShakeLocalPositionY(this Transform transform, float intensity, float duration, bool useFixedDeltaTime)
+            public static IEnumerator ShakeLocalPositionY(this Transform transform, float intensity, float duration, bool useFixedDeltaTime = false)
             {
                 return ShakePosition(transform, AXIS.Y, intensity, duration, true, useFixedDeltaTime);
             }
 
-            public static IEnumerator ShakeLocalPositionZ(this Transform transform, float intensity, float duration, bool useFixedDeltaTime)
+            public static IEnumerator ShakeLocalPositionZ(this Transform transform, float intensity, float duration, bool useFixedDeltaTime = false)
             {
                 return ShakePosition(transform, AXIS.Z, intensity, duration, true, useFixedDeltaTime);
             }
 
-            public static IEnumerator ShakeLocalPositionXY(this Transform transform, float intensity, float duration, bool useFixedDeltaTime)
+            public static IEnumerator ShakeLocalPositionXY(this Transform transform, float intensity, float duration, bool useFixedDeltaTime = false)
             {
                 return ShakePosition(transform, AXIS.X_Y, intensity, duration, true, useFixedDeltaTime);
             }
 
-            public static IEnumerator ShakeLocalPositionXY(this Transform transform, Vector3 intensity, float duration, bool useFixedDeltaTime)
+            public static IEnumerator ShakeLocalPositionXY(this Transform transform, Vector3 intensity, float duration, bool useFixedDeltaTime = false)
             {
                 return ShakePosition(transform, AXIS.X_Y, intensity, duration, true, useFixedDeltaTime);
             }
 
-            public static IEnumerator ShakeLocalPositionXZ(this Transform transform, float intensity, float duration, bool useFixedDeltaTime)
+            public static IEnumerator ShakeLocalPositionXZ(this Transform transform, float intensity, float duration, bool useFixedDeltaTime = false)
             {
                 return ShakePosition(transform, AXIS.X_Z, intensity, duration, true, useFixedDeltaTime);
             }
 
-            public static IEnumerator ShakeLocalPositionXZ(this Transform transform, Vector3 intensity, float duration, bool useFixedDeltaTime)
+            public static IEnumerator ShakeLocalPositionXZ(this Transform transform, Vector3 intensity, float duration, bool useFixedDeltaTime = false)
             {
                 return ShakePosition(transform, AXIS.X_Z, intensity, duration, true, useFixedDeltaTime);
             }
 
-            public static IEnumerator ShakeLocalPositionYZ(this Transform transform, float intensity, float duration, bool useFixedDeltaTime)
+            public static IEnumerator ShakeLocalPositionYZ(this Transform transform, float intensity, float duration, bool useFixedDeltaTime = false)
             {
                 return ShakePosition(transform, AXIS.Y_Z, intensity, duration, true, useFixedDeltaTime);
             }
 
-            public static IEnumerator ShakeLocalPositionYZ(this Transform transform, Vector3 intensity, float duration, bool useFixedDeltaTime)
+            public static IEnumerator ShakeLocalPositionYZ(this Transform transform, Vector3 intensity, float duration, bool useFixedDeltaTime = false)
             {
                 return ShakePosition(transform, AXIS.Y_Z, intensity, duration, true, useFixedDeltaTime);
             }
@@ -358,57 +358,57 @@
 
             #region WORLD
 
-            public static IEnumerator ShakeRotation(this Transform transform, float intensity, float duration, bool useFixedDeltaTime)
+            public static IEnumerator ShakeRotation(this Transform transform, float intensity, float duration, bool useFixedDeltaTime = false)
             {
                 return ShakeRotation(transform, intensity, duration, false, useFixedDeltaTime);
             }
 
-            public static IEnumerator ShakeRotation(this Transform transform, Vector3 intensity, float duration, bool useFixedDeltaTime)
+            public static IEnumerator ShakeRotation(this Transform transform, Vector3 intensity, float duration, bool useFixedDeltaTime = false)
             {
                 return ShakeRotation(transform, intensity, duration, false, useFixedDeltaTime);
             }
 
-            public static IEnumerator ShakeRotationX(this Transform transform, float intensity, float duration, bool useFixedDeltaTime)
+            public static IEnumerator ShakeRotationX(this Transform transform, float intensity, float duration, bool useFixedDeltaTime = false)
             {
                 return ShakeRotation(transform, AXIS.X, intensity, duration, false, useFixedDeltaTime);
             }
 
-            public static IEnumerator ShakeRotationY(this Transform transform, float intensity, float duration, bool useFixedDeltaTime)
+            public static IEnumerator ShakeRotationY(this Transform transform, float intensity, float duration, bool useFixedDeltaTime = false)
             {
                 return ShakeRotation(transform, AXIS.Y, intensity, duration, false, useFixedDeltaTime);
             }
 
-            public static IEnumerator ShakeRotationZ(this Transform transform, float intensity, float duration, bool useFixedDeltaTime)
+            public static IEnumerator ShakeRotationZ(this Transform transform, float intensity, float duration, bool useFixedDeltaTime = false)
             {
                 return ShakeRotation(transform, AXIS.Z, intensity, duration, false, useFixedDeltaTime);
             }
 
-            public static IEnumerator ShakeRotationXY(this Transform transform, float intensity, float duration, bool useFixedDeltaTime)
+            public static IEnumerator ShakeRotationXY(this Transform transform, float intensity, float duration, bool useFixedDeltaTime = false)
             {
                 return ShakeRotation(transform, AXIS.X_Y, intensity, duration, false, useFixedDeltaTime);
             }
 
-            public static IEnumerator ShakeRotationXY(this Transform transform, Vector3 intensity, float duration, bool useFixedDeltaTime)
+            public static IEnumerator ShakeRotationXY(this Transform transform, Vector3 intensity, float duration, bool useFixedDeltaTime = false)
             {
                 return ShakeRotation(transform, AXIS.X_Y, intensity, duration, false, useFixedDeltaTime);
             }
 
-            public static IEnumerator ShakeRotationXZ(this Transform transform, float intensity, float duration, bool useFixedDeltaTime)
+            public static IEnumerator ShakeRotationXZ(this Transform transform, float intensity, float duration, bool useFixedDeltaTime = false)
             {
                 return ShakeRotation(transform, AXIS.X_Z, intensity, duration, false, useFixedDeltaTime);
             }
 
-            public static IEnumerator ShakeRotationXZ(this Transform transform, Vector3 intensity, float duration, bool useFixedDeltaTime)
+            public static IEnumerator ShakeRotationXZ(this Transform transform, Vector3 intensity, float duration, bool useFixedDeltaTime = false)
             {
                 return ShakeRotation(transform, AXIS.X_Z, intensity, duration, false, useFixedDeltaTime);
             }
 
-            public static IEnumerator ShakeRotationYZ(this Transform transform, float intensity, float duration, bool useFixedDeltaTime)
+            public static IEnumerator ShakeRotationYZ(this Transform transform, float intensity, float duration, bool useFixedDeltaTime = false)
             {
                 return ShakeRotation(transform, AXIS.Y_Z, intensity, duration, false, useFixedDeltaTime);
             }
 
-            public static IEnumerator ShakeRotationYZ(this Transform transform, Vector3 intensity, float duration, bool useFixedDeltaTime)
+            public static IEnumerator ShakeRotationYZ(this Transform transform, Vector3 intensity, float duration, bool useFixedDeltaTime = false)
             {
                 return ShakeRotation(transform, AXIS.Y_Z, intensity, duration, false, useFixedDeltaTime);
             }
@@ -417,57 +417,57 @@
 
             #region LOCAL
 
-            public static IEnumerator ShakeLocalRotation(this Transform transform, float intensity, float duration, bool useFixedDeltaTime)
+            public static IEnumerator ShakeLocalRotation(this Transform transform, float intensity, float duration, bool useFixedDeltaTime = false)
             {
                 return ShakeRotation(transform, intensity, duration, true, useFixedDeltaTime);
             }
 
-            public static IEnumerator ShakeLocalRotation(this Transform transform, Vector3 intensity, float duration, bool useFixedDeltaTime)
+            public static IEnumerator ShakeLocalRotation(this Transform transform, Vector3 intensity, float duration, bool useFixedDeltaTime = false)
             {
                 return ShakeRotation(transform, intensity, duration, true, useFixedDeltaTime);
             }
 
-            public static IEnumerator ShakeLocalRotationX(this Transform transform, float intensity, float duration, bool useFixedDeltaTime)
+            public static IEnumerator ShakeLocalRotationX(this Transform transform, float intensity, float duration, bool useFixedDeltaTime = false)
             {
                 return ShakeRotation(transform, AXIS.X, intensity, duration, true, useFixedDeltaTime);
             }
 
-            public static IEnumerator ShakeLocalRotationY(this Transform transform, float intensity, float duration, bool useFixedDeltaTime)
+            public static IEnumerator ShakeLocalRotationY(this Transform transform, float intensity, float duration, bool useFixedDeltaTime = false)
             {
                 return ShakeRotation(transform, AXIS.Y, intensity, duration, true, useFixedDeltaTime);
             }
 
-            public static IEnumerator ShakeLocalRotationZ(this Transform transform, float intensity, float duration, bool useFixedDeltaTime)
+            public static IEnumerator ShakeLocalRotationZ(this Transform transform, float intensity, float duration, bool useFixedDeltaTime = false)
             {
                 return ShakeRotation(transform, AXIS.Z, intensity, duration, true, useFixedDeltaTime);
             }
 
-            public static IEnumerator ShakeLocalRotationXY(this Transform transform, float intensity, float duration, bool useFixedDeltaTime)
+            public static IEnumerator ShakeLocalRotationXY(this Transform transform, float intensity, float duration, bool useFixedDeltaTime = false)
             {
                 return ShakeRotation(transform, AXIS.X_Y, intensity, duration, true, useFixedDeltaTime);
             }
 
-            public static IEnumerator ShakeLocalRotationXY(this Transform transform, Vector3 intensity, float duration, bool useFixedDeltaTime)
+            public static IEnumerator ShakeLocalRotationXY(this Transform transform, Vector3 intensity, float duration, bool useFixedDeltaTime = false)
             {
                 return ShakeRotation(transform, AXIS.X_Y, intensity, duration, true, useFixedDeltaTime);
             }
 
-            public static IEnumerator ShakeLocalRotationXZ(this Transform transform, float intensity, float duration, bool useFixedDeltaTime)
+            public static IEnumerator ShakeLocalRotationXZ(this Transform transform, float intensity, float duration, bool useFixedDeltaTime = false)
             {
                 return ShakeRotation(transform, AXIS.X_Z, intensity, duration, true, useFixedDeltaTime);
             }
 
-            public static IEnumerator ShakeLocalRotationXZ(this Transform transform, Vector3 intensity, float duration, bool useFixedDeltaTime)
+            public static IEnumerator ShakeLocalRotationXZ(this Transform transform, Vector3 intensity, float duration, bool useFixedDeltaTime = false)
             {
                 return ShakeRotation(transform, AXIS.X_Z, intensity, duration, true, useFixedDeltaTime);
             }
 
-            public static IEnumerator ShakeLocalRotationYZ(this Transform transform, float intensity, float duration, bool useFixedDeltaTime)
+            public static IEnumerator ShakeLocalRotationYZ(this Transform transform, float intensity, float duration, bool useFixedDeltaTime = false)
             {
                 return ShakeRotation(transform, AXIS.Y_Z, intensity, duration, true, useFixedDeltaTime);
             }
 
-            public static IEnumerator ShakeLocalRotationYZ(this Transform transform, Vector3 intensity, float duration, bool useFixedDeltaTime)
+            public static IEnumerator ShakeLocalRotationYZ(this Transform transform, Vector3 intensity, float duration, bool useFixedDeltaTime = false)
             {
                 return ShakeRotation(transform, AXIS.Y_Z, intensity, duration, true, useFixedDeltaTime);
             }
@@ -694,57 +694,57 @@
 
             #region WORLD
 
-            public static IEnumerator ShakeEuLerAngles(this Transform transform, float intensity, float duration, bool useFixedDeltaTime)
+            public static IEnumerator ShakeEuLerAngles(this Transform transform, float intensity, float duration, bool useFixedDeltaTime = false)
             {
                 return ShakeEuLerAngles(transform, intensity, duration, false, useFixedDeltaTime);
             }
 
-            public static IEnumerator ShakeEuLerAngles(this Transform transform, Vector3 intensity, float duration, bool useFixedDeltaTime)
+            public static IEnumerator ShakeEuLerAngles(this Transform transform, Vector3 intensity, float duration, bool useFixedDeltaTime = false)
             {
                 return ShakeEuLerAngles(transform, intensity, duration, false, useFixedDeltaTime);
             }
 
-            public static IEnumerator ShakeEuLerAnglesX(this Transform transform, float intensity, float duration, bool useFixedDeltaTime)
+            public static IEnumerator ShakeEuLerAnglesX(this Transform transform, float intensity, float duration, bool useFixedDeltaTime = false)
             {
                 return ShakeEuLerAngles(transform, AXIS.X, intensity, duration, false, useFixedDeltaTime);
             }
 
-            public static IEnumerator ShakeEuLerAnglesY(this Transform transform, float intensity, float duration, bool useFixedDeltaTime)
+            public static IEnumerator ShakeEuLerAnglesY(this Transform transform, float intensity, float duration, bool useFixedDeltaTime = false)
             {
                 return ShakeEuLerAngles(transform, AXIS.Y, intensity, duration, false, useFixedDeltaTime);
             }
 
-            public static IEnumerator ShakeEuLerAnglesZ(this Transform transform, float intensity, float duration, bool useFixedDeltaTime)
+            public static IEnumerator ShakeEuLerAnglesZ(this Transform transform, float intensity, float duration, bool useFixedDeltaTime = false)
             {
                 return ShakeEuLerAngles(transform, AXIS.Z, intensity, duration, false, useFixedDeltaTime);
             }
 
-            public static IEnumerator ShakeEuLerAnglesXY(this Transform transform, float intensity, float duration, bool useFixedDeltaTime)
+            public static IEnumerator ShakeEuLerAnglesXY(this Transform transform, float intensity, float duration, bool useFixedDeltaTime = false)
             {
                 return ShakeEuLerAngles(transform, AXIS.X_Y, intensity, duration, false, useFixedDeltaTime);
             }
 
-            public static IEnumerator ShakeEuLerAnglesXY(this Transform transform, Vector3 intensity, float duration, bool useFixedDeltaTime)
+            public static IEnumerator ShakeEuLerAnglesXY(this Transform transform, Vector3 intensity, float duration, bool useFixedDeltaTime = false)
             {
                 return ShakeEuLerAngles(transform, AXIS.X_Y, intensity, duration, false, useFixedDeltaTime);
             }
 
-            public static IEnumerator ShakeEuLerAnglesXZ(this Transform transform, float intensity, float duration, bool useFixedDeltaTime)
+            public static IEnumerator ShakeEuLerAnglesXZ(this Transform transform, float intensity, float duration, bool useFixedDeltaTime = false)
             {
                 return ShakeEuLerAngles(transform, AXIS.X_Z, intensity, duration, false, useFixedDeltaTime);
             }
 
-            public static IEnumerator ShakeEuLerAnglesXZ(this Transform transform, Vector3 intensity, float duration, bool useFixedDeltaTime)
+            public static IEnumerator ShakeEuLerAnglesXZ(this Transform transform, Vector3 intensity, float duration, bool useFixedDeltaTime = false)
             {
                 return ShakeEuLerAngles(transform, AXIS.X_Z, intensity, duration, false, useFixedDeltaTime);
             }
 
-            public static IEnumerator ShakeEuLerAnglesYZ(this Transform transform, float intensity, float duration, bool useFixedDeltaTime)
+            public static IEnumerator ShakeEuLerAnglesYZ(this Transform transform, float intensity, float duration, bool useFixedDeltaTime = false)
             {
                 return ShakeEuLerAngles(transform, AXIS.Y_Z, intensity, duration, false, useFixedDeltaTime);
             }
 
-            public static IEnumerator ShakeEuLerAnglesYZ(this Transform transform, Vector3 intensity, float duration, bool useFixedDeltaTime)
+            public static IEnumerator ShakeEuLerAnglesYZ(this Transform transform, Vector3 intensity, float duration, bool useFixedDeltaTime = false)
             {
                 return ShakeEuLerAngles(transform, AXIS.Y_Z, intensity, duration, false, useFixedDeltaTime);
             }
@@ -753,57 +753,57 @@
 
             #region LOCAL
 
-            public static IEnumerator ShakeLocalEuLerAngles(this Transform transform, float intensity, float duration, bool useFixedDeltaTime)
+            public static IEnumerator ShakeLocalEuLerAngles(this Transform transform, float intensity, float duration, bool useFixedDeltaTime = false)
             {
                 return ShakeEuLerAngles(transform, intensity, duration, true, useFixedDeltaTime);
             }
 
-            public static IEnumerator ShakeLocalEuLerAngles(this Transform transform, Vector3 intensity, float duration, bool useFixedDeltaTime)
+            public static IEnumerator ShakeLocalEuLerAngles(this Transform transform, Vector3 intensity, float duration, bool useFixedDeltaTime = false)
             {
                 return ShakeEuLerAngles(transform, intensity, duration, true, useFixedDeltaTime);
             }
 
-            public static IEnumerator ShakeLocalEuLerAnglesX(this Transform transform, float intensity, float duration, bool useFixedDeltaTime)
+            public static IEnumerator ShakeLocalEuLerAnglesX(this Transform transform, float intensity, float duration, bool useFixedDeltaTime = false)
             {
                 return ShakeEuLerAngles(transform, AXIS.X, intensity, duration, true, useFixedDeltaTime);
             }
 
-            public static IEnumerator ShakeLocalEuLerAnglesY(this Transform transform, float intensity, float duration, bool useFixedDeltaTime)
+            public static IEnumerator ShakeLocalEuLerAnglesY(this Transform transform, float intensity, float duration, bool useFixedDeltaTime = false)
             {
                 return ShakeEuLerAngles(transform, AXIS.Y, intensity, duration, true, useFixedDeltaTime);
             }
 
-            public static IEnumerator ShakeLocalEuLerAnglesZ(this Transform transform, float intensity, float duration, bool useFixedDeltaTime)
+            public static IEnumerator ShakeLocalEuLerAnglesZ(this Transform transform, float intensity, float duration, bool useFixedDeltaTime = false)
             {
                 return ShakeEuLerAngles(transform, AXIS.Z, intensity, duration, true, useFixedDeltaTime);
             }
 
-            public static IEnumerator ShakeLocalEuLerAnglesXY(this Transform transform, float intensity, float duration, bool useFixedDeltaTime)
+            public static IEnumerator ShakeLocalEuLerAnglesXY(this Transform transform, float intensity, float duration, bool useFixedDeltaTime = false)
             {
                 return ShakeEuLerAngles(transform, AXIS.X_Y, intensity, duration, true, useFixedDeltaTime);
             }
 
-            public static IEnumerator ShakeLocalEuLerAnglesXY(this Transform transform, Vector3 intensity, float duration, bool useFixedDeltaTime)
+            public static IEnumerator ShakeLocalEuLerAnglesXY(this Transform transform, Vector3 intensity, float duration, bool useFixedDeltaTime = false)
             {
                 return ShakeEuLerAngles(transform, AXIS.X_Y, intensity, duration, true, useFixedDeltaTime);
             }
 
-            public static IEnumerator ShakeLocalEuLerAnglesXZ(this Transform transform, float intensity, float duration, bool useFixedDeltaTime)
+            public static IEnumerator ShakeLocalEuLerAnglesXZ(this Transform transform, float intensity, float duration, bool useFixedDeltaTime = false)
             {
                 return ShakeEuLerAngles(transform, AXIS.X_Z, intensity, duration, true, useFixedDeltaTime);
             }
 
-            public static IEnumerator ShakeLocalEuLerAnglesXZ(this Transform transform, Vector3 intensity, float duration, bool useFixedDeltaTime)
+            public static IEnumerator ShakeLocalEuLerAnglesXZ(this Transform transform, Vector3 intensity, float duration, bool useFixedDeltaTime = false)
             {
                 return ShakeEuLerAngles(transform, AXIS.X_Z, intensity, duration, true, useFixedDeltaTime);
             }
 
-            public static IEnumerator ShakeLocalEuLerAnglesYZ(this Transform transform, float intensity, float duration, bool useFixedDeltaTime)
+            public static IEnumerator ShakeLocalEuLerAnglesYZ(this Transform transform, float intensity, float duration, bool useFixedDeltaTime = false)
             {
                 return ShakeEuLerAngles(transform, AXIS.Y_Z, intensity, duration, true, useFixedDeltaTime);
             }
 
-            public static IEnumerator ShakeLocalEuLerAnglesYZ(this Transform transform, Vector3 intensity, float duration, bool useFixedDeltaTime)
+            public static IEnumerator ShakeLocalEuLerAnglesYZ(this Transform transform, Vector3 intensity, float duration, bool useFixedDeltaTime = false)
             {
                 return ShakeEuLerAngles(transform, AXIS.Y_Z, intensity, duration, true, useFixedDeltaTime);
             }
@@ -1028,57 +1028,57 @@
 
             #region PUBLIC
 
-            public static IEnumerator ShakeScale(this Transform transform, float intensity, float duration, bool useFixedDeltaTime)
+            public static IEnumerator ShakeScale(this Transform transform, float intensity, float duration, bool useFixedDeltaTime = false)
             {
                 return BaseShakeScale(transform, intensity, duration, useFixedDeltaTime);
             }
 
-            public static IEnumerator ShakeScale(this Transform transform, Vector3 intensity, float duration, bool useFixedDeltaTime)
+            public static IEnumerator ShakeScale(this Transform transform, Vector3 intensity, float duration, bool useFixedDeltaTime = false)
             {
                 return BaseShakeScale(transform, intensity, duration, useFixedDeltaTime);
             }
 
-            public static IEnumerator ShakeScaleX(this Transform transform, float intensity, float duration, bool useFixedDeltaTime)
+            public static IEnumerator ShakeScaleX(this Transform transform, float intensity, float duration, bool useFixedDeltaTime = false)
             {
                 return ShakeScale(transform, AXIS.X, intensity, duration, useFixedDeltaTime);
             }
 
-            public static IEnumerator ShakeScaleY(this Transform transform, float intensity, float duration, bool useFixedDeltaTime)
+            public static IEnumerator ShakeScaleY(this Transform transform, float intensity, float duration, bool useFixedDeltaTime = false)
             {
                 return ShakeScale(transform, AXIS.Y, intensity, duration, useFixedDeltaTime);
             }
 
-            public static IEnumerator ShakeScaleZ(this Transform transform, float intensity, float duration, bool useFixedDeltaTime)
+            public static IEnumerator ShakeScaleZ(this Transform transform, float intensity, float duration, bool useFixedDeltaTime = false)
             {
                 return ShakeScale(transform, AXIS.Z, intensity, duration, useFixedDeltaTime);
             }
 
-            public static IEnumerator ShakeScaleXY(this Transform transform, float intensity, float duration, bool useFixedDeltaTime)
+            public static IEnumerator ShakeScaleXY(this Transform transform, float intensity, float duration, bool useFixedDeltaTime = false)
             {
                 return ShakeScale(transform, AXIS.X_Y, intensity, duration, useFixedDeltaTime);
             }
 
-            public static IEnumerator ShakeScaleXY(this Transform transform, Vector3 intensity, float duration, bool useFixedDeltaTime)
+            public static IEnumerator ShakeScaleXY(this Transform transform, Vector3 intensity, float duration, bool useFixedDeltaTime = false)
             {
                 return ShakeScale(transform, AXIS.X_Y, intensity, duration, useFixedDeltaTime);
             }
 
-            public static IEnumerator ShakeScaleXZ(this Transform transform, float intensity, float duration, bool useFixedDeltaTime)
+            public static IEnumerator ShakeScaleXZ(this Transform transform, float intensity, float duration, bool useFixedDeltaTime = false)
             {
                 return ShakeScale(transform, AXIS.X_Z, intensity, duration, useFixedDeltaTime);
             }
 
-            public static IEnumerator ShakeScaleXZ(this Transform transform, Vector3 intensity, float duration, bool useFixedDeltaTime)
+            public static IEnumerator ShakeScaleXZ(this Transform transform, Vector3 intensity, float duration, bool useFixedDeltaTime = false)
             {
                 return ShakeScale(transform, AXIS.X_Z, intensity, duration, useFixedDeltaTime);
             }
 
-            public static IEnumerator ShakeScaleYZ(this Transform transform, float intensity, float duration, bool useFixedDeltaTime)
+            public static IEnumerator ShakeScaleYZ(this Transform transform, float intensity, float duration, bool useFixedDeltaTime = false)
             {
                 return ShakeScale(transform, AXIS.Y_Z, intensity, duration, useFixedDeltaTime);
             }
 
-            public static IEnumerator ShakeScaleYZ(this Transform transform, Vector3 intensity, float duration, bool useFixedDeltaTime)
+            public static IEnumerator ShakeScaleYZ(this Transform transform, Vector3 intensity, float duration, bool useFixedDeltaTime = false)
             {
                 return ShakeScale(transform, AXIS.Y_Z, intensity, duration, useFixedDeltaTime);
             }

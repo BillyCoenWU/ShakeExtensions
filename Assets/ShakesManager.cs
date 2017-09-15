@@ -56,8 +56,10 @@
 
                 public void Start()
                 {
+                    Resume();
                     m_running = true;
-                    s_instance.StartCoroutine(ShakeCoroutine());
+                    m_stopped = false;
+                    Instance.StartCoroutine(ShakeCoroutine());
                 }
 
                 public void Stop()
@@ -79,6 +81,8 @@
                 private IEnumerator ShakeCoroutine()
                 {
                     yield return null;
+
+                    Instance.m_shakes.Add(this);
 
                     if (onStart != null)
                     {
@@ -112,7 +116,7 @@
                         }
                     }
 
-                    s_instance.RemoveShake(this);
+                    Instance.m_shakes.Remove(this);
                 }
             }
 
@@ -142,14 +146,7 @@
 
             public Shake CreateShake (IEnumerator coroutine)
             {
-                Shake s = new Shake(coroutine);
-                m_shakes.Add(s);
-                return s;
-            }
-
-            public void RemoveShake (Shake shake)
-            {
-                m_shakes.Remove(shake);
+                return new Shake(coroutine);
             }
 
             public void StopAll ()
