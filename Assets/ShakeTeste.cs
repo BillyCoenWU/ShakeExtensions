@@ -7,21 +7,20 @@ public class ShakeTeste : MonoBehaviour
 
 	private void Start ()
 	{
-        m_shake = ShakesManager.Instance.CreateShake(transform.ShakePosition(1.0f, 10.0f, false));
-        m_shake.Start();
+        m_shake = ShakesManager.Instance.CreateShake(transform.ShakePositionXY(1.0f, 1.0f, 5.0f));
 	}
     
     private void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Space))
+        if(Input.GetKeyDown(KeyCode.A))
         {
-            if (!m_shake.paused)
+            if(!m_shake.running)
             {
-                m_shake.Pause();
+                m_shake.Start();
             }
             else
             {
-                m_shake.Resume();
+                m_shake.Stop();
             }
         }
     }

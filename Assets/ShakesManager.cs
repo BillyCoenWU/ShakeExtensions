@@ -11,6 +11,24 @@
         {
             public class Shake
             {
+                public class Data
+                {
+                    public float speed = 0.0f;
+                    public float duration = 0.0f;
+                    public float intensity = 0.0f;
+
+                    public Transform transform = null;
+                    public Rigidbody rigidbody = null;
+                    public Rigidbody2D rigidbody2D = null;
+
+                    public SHAKE_TYPE type = SHAKE_TYPE.MOVE;
+
+                    public Vector3 v3Intensity = Vector3.zero;
+                    public Vector2 v2Intensity = Vector2.zero;
+                }
+
+                private readonly Data m_data = null;
+
                 public delegate void StartEvent();
                 public StartEvent onStart;
 
@@ -32,7 +50,14 @@
                     }
                 }
 
-                private readonly IEnumerator m_shake;
+                public Shake(IEnumerable coroutine, Transform _transform, SHAKE_TYPE type)
+                {
+                    m_data = new Data();
+                    m_data.type = type;
+                    m_data.transform = _transform;
+                }
+
+                private IEnumerator m_shake;
 
                 private bool m_stopped = false;
 
@@ -88,7 +113,14 @@
                     {
                         onStart();
                     }
-
+                    
+                    /*
+                    if(m_shake != null && !m_shake.MoveNext())
+                    {
+                        m_shake.Reset();
+                    }
+                    */
+                    
                     while (m_running)
                     {
                         if (m_paused)
@@ -136,10 +168,10 @@
                 s_instance = this;
                 m_shakes = new List<Shake>();
                 DontDestroyOnLoad(gameObject);
-                SceneManager.sceneUnloaded += SceneUnloaded;
+                SceneManager.sceneLoaded += SceneUnloaded;
             }
 
-            private void SceneUnloaded (Scene oldScene)
+            private void SceneUnloaded (Scene oldScene, LoadSceneMode mode)
             {
                 StopAll();
             }
