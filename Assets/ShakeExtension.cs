@@ -53,9 +53,7 @@
 
             #endregion
 
-            #region Rigidbody
-
-            #region 2D
+            #region Rigidbody2D
 
             #region Position
 
@@ -204,12 +202,12 @@
 
             #endregion
 
-            #region 3D
+            #region Rigidbody
 
             #region Position
 
             #region PUBLIC
-            
+
             public static IEnumerator ShakePosition(this Rigidbody rigidbody, float intensity, float speed, float duration, bool useFixedDeltaTime = false)
             {
                 return ShakingPosition(rigidbody, intensity, speed, duration, useFixedDeltaTime);
@@ -659,9 +657,7 @@
             #endregion
 
             #endregion
-
-            #endregion
-
+            
             #endregion
 
             #region Transform
