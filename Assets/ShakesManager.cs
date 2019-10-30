@@ -7,7 +7,7 @@
         using System.Collections.Generic;
         using UnityEngine.SceneManagement;
         
-        public class ShakesManager : MonoBehaviour
+        public static class ShakesManager
         {
             public class Shake
             {
@@ -21,8 +21,6 @@
                     public Rigidbody rigidbody = null;
                     public Rigidbody2D rigidbody2D = null;
 
-                    public SHAKE_TYPE type = SHAKE_TYPE.MOVE;
-
                     public Vector3 v3Intensity = Vector3.zero;
                     public Vector2 v2Intensity = Vector2.zero;
                 }
@@ -35,12 +33,12 @@
                 public delegate void FinishEvent();
                 public FinishEvent onFinish;
 
-                public Shake(IEnumerator coroutine)
+                public Shake (IEnumerator coroutine)
                 {
                     m_shake = coroutine;
                 }
                 
-                public Shake(IEnumerator coroutine, bool start = true)
+                public Shake (IEnumerator coroutine, bool start = true)
                 {
                     m_shake = coroutine;
 
@@ -50,10 +48,11 @@
                     }
                 }
 
-                public Shake(IEnumerable coroutine, Transform _transform, SHAKE_TYPE type)
+                public Shake (IEnumerator coroutine, Transform _transform)
                 {
+                    m_shake = coroutine;
+
                     m_data = new Data();
-                    m_data.type = type;
                     m_data.transform = _transform;
                 }
 
@@ -84,7 +83,7 @@
                     Resume();
                     m_running = true;
                     m_stopped = false;
-                    Instance.StartCoroutine(ShakeCoroutine());
+                    //StartCoroutine(ShakeCoroutine());
                 }
 
                 public void Stop()
@@ -107,19 +106,12 @@
                 {
                     yield return null;
 
-                    Instance.m_shakes.Add(this);
+                    ShakesManager.shakes.Add(this);
 
                     if (onStart != null)
                     {
                         onStart();
                     }
-                    
-                    /*
-                    if(m_shake != null && !m_shake.MoveNext())
-                    {
-                        m_shake.Reset();
-                    }
-                    */
                     
                     while (m_running)
                     {
@@ -148,60 +140,50 @@
                         }
                     }
 
-                    Instance.m_shakes.Remove(this);
+                    ShakesManager.shakes.Remove(this);
                 }
             }
 
-            private List<Shake> m_shakes = null;
+            public static List<Shake> shakes = null;
 
-            private static ShakesManager s_instance = null;
-            public static ShakesManager Instance
+            [RuntimeInitializeOnLoadMethod]
+            private static void Awake ()
             {
-                get
-                {
-                    return s_instance;
-                }
-            }
+                shakes = new List<Shake>();
 
-            private void Awake ()
-            {
-                s_instance = this;
-                m_shakes = new List<Shake>();
-                DontDestroyOnLoad(gameObject);
                 SceneManager.sceneLoaded += SceneUnloaded;
             }
 
-            private void SceneUnloaded (Scene oldScene, LoadSceneMode mode)
+            private static void SceneUnloaded (Scene oldScene, LoadSceneMode mode)
             {
                 StopAll();
             }
 
-            public Shake CreateShake (IEnumerator coroutine)
+            public static Shake CreateShake (IEnumerator coroutine)
             {
                 return new Shake(coroutine);
             }
 
-            public void StopAll ()
+            public static void StopAll ()
             {
-                StopAllCoroutines();
-                m_shakes.Clear();
+                shakes.Clear();
             }
 
-            public void PauseAll ()
+            public static void PauseAll ()
             {
-                int count = m_shakes.Count;
+                int count = shakes.Count;
                 for (int i = 0; i < count; i++)
                 {
-                    m_shakes[i].Pause();
+                    shakes[i].Pause();
                 }
             }
 
-            public void ResumeAll ()
+            public static void ResumeAll ()
             {
-                int count = m_shakes.Count;
+                int count = shakes.Count;
                 for (int i = 0; i < count; i++)
                 {
-                    m_shakes[i].Resume();
+                    shakes[i].Resume();
                 }
             }
         }

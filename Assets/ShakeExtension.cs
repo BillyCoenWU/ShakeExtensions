@@ -18,22 +18,19 @@
             DECRESCENT
         }
 
-        public enum SHAKE_TYPE
-        {
-            MOVE = 0,
-            ROTATION,
-            SCALE
-        }
-
         public enum AXIS
         {
-            X_Y_Z = 0,
+            NONE = 0,
+
+            X,
+            Y,
+            Z,
+
             X_Y,
             X_Z,
             Y_Z,
-            X,
-            Y,
-            Z
+
+            X_Y_Z
         }
 
         #endregion
@@ -42,7 +39,7 @@
         {
             // TO DO:
             // FAZER O SHAKE SER REUTILIZAVEL
-            // RECTTRANSFORM 
+            // RECTTRANSFORM
             // QUANDO SHAKES SAO INTERROMPIDOS NAO VOLTAM PRA POSICAO INICIAL
             // CRIAR SHAKES QUE TENHAM VARIACOES NA INTENSIDADE
             // - [RANDOM DENTRO DE PARAMETROS / CRESCENTE DENTRO DE PARAMETROS / DECRESCENTE DENTRO DE PARAMETROS]
@@ -83,7 +80,7 @@
 
             #region PRIVATE
 
-            private static IEnumerator ShakingPosition (Rigidbody2D rigidbody2D, float intensity, float speed, float duration, bool useFixedDuration)
+            private static IEnumerator ShakingPosition (Rigidbody2D rigidbody2D, float intensity, float speed, float duration, bool useFixedDeltaTime)
             {
                 float time = 0.0f;
                 float step = 0.0f;
@@ -91,18 +88,25 @@
 
                 while (time < duration)
                 {
-                    time += Time.deltaTime;
+                    time += useFixedDeltaTime ? Time.fixedDeltaTime : Time.deltaTime;
                     step = speed * Time.deltaTime;
                     
                     rigidbody2D.MovePosition(Vector2.MoveTowards(startPosition, startPosition + (Random.insideUnitCircle * intensity), step));
 
-                    yield return null;
+                    if(useFixedDeltaTime)
+                    {
+                        yield return new WaitForFixedUpdate();
+                    }
+                    else
+                    {
+                        yield return new WaitForEndOfFrame();
+                    }
                 }
 
                 rigidbody2D.MovePosition(startPosition);
             }
 
-            private static IEnumerator ShakingPosition(Rigidbody2D rigidbody2D, Vector2 intensity, float speed, float duration, bool useFixedDuration)
+            private static IEnumerator ShakingPosition (Rigidbody2D rigidbody2D, Vector2 intensity, float speed, float duration, bool useFixedDeltaTime)
             {
                 float time = 0.0f;
                 float step = 0.0f;
@@ -111,7 +115,7 @@
 
                 while (time < duration)
                 {
-                    time += Time.deltaTime;
+                    time += useFixedDeltaTime ? Time.fixedDeltaTime : Time.deltaTime;
                     step = speed * Time.deltaTime;
                     
                     newRandomPosition = Random.insideUnitCircle;
@@ -120,13 +124,20 @@
 
                     rigidbody2D.MovePosition(Vector2.MoveTowards(startPosition, startPosition + newRandomPosition, step));
 
-                    yield return null;
+                    if (useFixedDeltaTime)
+                    {
+                        yield return new WaitForFixedUpdate();
+                    }
+                    else
+                    {
+                        yield return new WaitForEndOfFrame();
+                    }
                 }
 
                 rigidbody2D.MovePosition(startPosition);
             }
 
-            private static IEnumerator ShakingPosition(Rigidbody2D rigidbody2D, AXIS axis, float intensity, float speed, float duration, bool useFixedDuration)
+            private static IEnumerator ShakingPosition(Rigidbody2D rigidbody2D, AXIS axis, float intensity, float speed, float duration, bool useFixedDeltaTime)
             {
                 float time = 0.0f;
                 float step = 0.0f;
@@ -135,7 +146,7 @@
 
                 while (time < duration)
                 {
-                    time += Time.deltaTime;
+                    time += useFixedDeltaTime ? Time.fixedDeltaTime : Time.deltaTime;
                     step = speed * Time.deltaTime;
 
                     newRandomPosition = Random.insideUnitCircle;
@@ -154,7 +165,14 @@
                     
                     rigidbody2D.MovePosition(Vector2.MoveTowards(startPosition, startPosition + newRandomPosition, step));
 
-                    yield return null;
+                    if (useFixedDeltaTime)
+                    {
+                        yield return new WaitForFixedUpdate();
+                    }
+                    else
+                    {
+                        yield return new WaitForEndOfFrame();
+                    }
                 }
 
                 rigidbody2D.MovePosition(startPosition);
